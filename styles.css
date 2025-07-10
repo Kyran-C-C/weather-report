@@ -1,0 +1,120 @@
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  background: url("wp11338759.webp");
+  margin: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  overflow-y: hidden;
+  size: fill;
+
+    background-color: #1a1a1a;
+  min-height: 100vh;
+  margin: 0; 
+  padding: 0; 
+
+    transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+
+}
+body.slide-in {
+  transform: translateX(0);
+  opacity: 1;
+}
+#reporting{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+    width: 40%;
+  max-width: 1800px;
+  height: auto;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white; 
+  font-family:Verdana, Geneva, Tahoma, sans-serif
+
+}
+#reporting h1{
+  text-align: center;
+  font-size: 40px;
+
+}
+#reporting p{
+  font-size: 24px;
+}
+
+#Emoji{
+    margin: 0;
+  font-size: 150px !important;
+  line-height: 1;
+}
+#backButton {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  font-size: 25px;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  width: 120px;
+  height: 25px;
+  position: fixed;
+}
+
+#backButton:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+@media (max-width: 768px) {
+    #reporting {
+        width: 95% !important;
+        padding: 15px !important;
+        margin: 20px auto !important;
+    }
+    
+    #reporting h1 {
+        font-size: 1.8rem !important;
+        margin-bottom: 15px !important;
+    }
+    
+    #reporting p {
+        font-size: 1.2rem !important;
+        margin: 10px 0 !important;
+    }
+    
+    #Emoji {
+        font-size: 4rem !important;
+        margin: 15px 0 !important;
+    }
+    
+    #backButton {
+        font-size: 1rem !important;
+        width: 100px !important;
+        height: 40px !important;
+        top: 20px !important;
+        left: 20px !important;
+        padding: 8px 15px !important;
+    }
+    
+    body {
+        overflow-x: hidden !important;
+        padding: 0 !important;
+          overscroll-behavior: none;
+  overscroll-behavior-y: none;
+  overscroll-behavior-x: none;
+  touch-action: none;
+    }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Report</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <div id="reporting">
+
+
+    </div>
+    
+   <script >
+    const container = document.getElementById("reporting");
+      const data = JSON.parse(localStorage.getItem("weather"));
+  if (data) {
+    const { name, main: { temp, humidity }, weather: [{ description ,id}] } = data;
+        const cityHeading = document.createElement("h1");
+        cityHeading.id="City";
+    cityHeading.textContent = `Weather Report for ${name}`;
+    container.appendChild(cityHeading);
+
+    const tempPara = document.createElement("p");
+    tempPara.id="Temp";
+    tempPara.textContent = `Temperature: ${Math.round(temp - 273.15)} °C`;
+    container.appendChild(tempPara);
+
+    const humidityPara = document.createElement("p");
+    humidityPara.textContent = `Humidity: ${humidity}%`;
+    humidityPara.id="Humidity";
+    container.appendChild(humidityPara);
+
+    const descPara = document.createElement("p");
+    descPara.id="Desc";
+    descPara.textContent = `description:${description}`;
+    container.appendChild(descPara);
+
+    function weatheremoji(id) {
+      switch(true){
+        case(id>=200 && id<300):
+        return "⛈️";
+        case(id>=300 && id<400):
+        return "🌦️";
+        case(id>=500 && id<600):
+        return "🌧️";
+        case(id>=600 && id<700):
+        return "❄️";
+        case(id>=700 && id<800):
+        return "🌫️";
+        case(id===800):
+        return "☀️";
+        case(id>800 && id<810):
+        return "☁️";
+        default:
+          return"⁉️⁉️⁉️";
+      }
+}
+    const descemoji = document.createElement("p");
+    descemoji.id="Emoji";
+    descemoji.textContent = `${weatheremoji(id)}`;
+    container.appendChild(descemoji);
+
+  } else {
+    document.getElementById("reporting").textContent = "No weather data found.";
+  }
+
+   </script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    requestAnimationFrame(() => {
+      document.body.classList.add("slide-in");
+    });
+  });
+  
+  
+
+</script>
+
+   
+<a href="index.html" id="backButton">← Back</a>
+
+</body>
+
+</html>
